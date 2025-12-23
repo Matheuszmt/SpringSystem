@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD System</title>
+    <link rel="stylesheet" href="../../System/front-end/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Sistema de Gerenciamento</h1>
+
+    <!-- Menu Principal -->
+    <div id="menu" class="menu">
+        <button class="menu-btn" onclick="showSection('create')">Criar Usuário</button>
+        <button class="menu-btn" onclick="showSection('login')">Login</button>
+        <button class="menu-btn" onclick="showSection('list')">Listar Usuários</button>
+        <button class="menu-btn" onclick="showSection('delete')">Deletar Usuário</button>
+    </div>
+
+    <!-- Criar Usuário -->
+    <div id="create" class="form-section">
+        <h2>Criar Usuário</h2>
+        <form onsubmit="createUser(event)">
+            <div class="form-group">
+                <label for="createEmail">Email:</label>
+                <input type="email" id="createEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="createPassword">Senha:</label>
+                <input type="password" id="createPassword" required>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Criar</button>
+                <button type="button" class="btn btn-secondary" onclick="showMenu()">Voltar</button>
+            </div>
+        </form>
+        <div id="createMessage" class="message"></div>
+    </div>
+
+    <!-- Login -->
+    <div id="login" class="form-section">
+        <h2>Login</h2>
+        <form onsubmit="loginUser(event)">
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Senha:</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="button" class="btn btn-secondary" onclick="showMenu()">Voltar</button>
+            </div>
+        </form>
+        <div id="loginMessage" class="message"></div>
+    </div>
+
+    <!-- Listar Usuários -->
+    <div id="list" class="form-section">
+        <h2>Usuários Cadastrados</h2>
+        <div id="usersList" class="users-list"></div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" onclick="showMenu()">Voltar</button>
+        </div>
+    </div>
+
+    <!-- Deletar Usuário -->
+    <div id="delete" class="form-section">
+        <h2>Deletar Usuário</h2>
+        <form onsubmit="deleteUser(event)">
+            <div class="form-group">
+                <label for="deleteId">ID do Usuário:</label>
+                <input type="text" id="deleteId" required>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Deletar</button>
+                <button type="button" class="btn btn-secondary" onclick="showMenu()">Voltar</button>
+            </div>
+        </form>
+        <div id="deleteMessage" class="message"></div>
+    </div>
+</div>
+
+<script src="../../System/front-end/script.js"></script>
+</body>
+</html>
