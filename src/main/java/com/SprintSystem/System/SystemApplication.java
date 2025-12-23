@@ -44,12 +44,12 @@ public class SystemApplication {
 			System.out.print("Senha: ");
 			String password = scanner.nextLine();
 
-			if (authService.login(email, password)) {
-				System.out.println("Login autorizado!");
-			} else {
-				System.err.println("Email ou senha inválidos!");
-			}
-		}
+            if (!authService.login(email, password)) {
+                System.err.println("Email ou senha inválidos!");
+            } else {
+                System.out.println("Login autorizado!");
+            }
+        }
 
 		if (option == 3) {
 			String usersJson = userService.listUsers();

@@ -16,7 +16,7 @@ public class AuthService {
                 "email": "%s",
                 "password: "%s",
                 }
-                """.formatted(emailg password);
+                """.formatted(email, password);
 
         try {
             HttpRequest request = HttpRequest.newBuilder()
